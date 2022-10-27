@@ -1,0 +1,28 @@
+{% extends 'layout/layout.html' %}
+
+{%block content %}
+    <section>
+        <div class="container card py-4 px-5 my-3" id="card">
+            <div class="container text-center card p-2">
+                <i class="fa fa-music"></i>
+            </div>
+            <form class="form py-2 my-4" id="upload-form">
+                <input type="file" name="song-file" class="form-control my-2" id="song-file">
+                <button type="submit" class="form-control bg-secondary">Add</button>
+            </form>
+            <div class="app-controls py-4">
+                <a href="/list-all">
+                    <i class="fa fa-list"></i>
+                </a>
+                <a href="/home">
+                    <i class="fa fa-circle"></i>
+                </a>
+                <a href="/add">
+                    <i class="fa fa-message"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <script src="{{url_for('static',filename='js/add_song.js')}}">
+    </script>
+{%endblock %}

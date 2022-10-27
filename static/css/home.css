@@ -1,0 +1,33 @@
+#card{
+    width: 25rem !important;
+}
+
+body{
+    height: 100vh !important;
+    background-color: rgb(82, 82, 82) !important;
+}
+.controls{
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0;
+    font-size: 1rem;
+}
+.controls i{
+    padding: 10px;
+    border-radius: 100%;
+}
+.controls i:hover{
+    background-color: rgba(82, 82, 82, 0.452);
+}
+
+.music-controls{
+    display: flex;
+    justify-content: space-between;
+}
+.music-controls progress{
+    width: 80%;
+}
+.app-controls{
+    display: flex;
+    justify-content: space-between;
+}

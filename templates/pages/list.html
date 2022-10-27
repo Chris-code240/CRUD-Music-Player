@@ -1,0 +1,29 @@
+{% extends 'layout/layout.html' %}
+
+{%block content %}
+    <section>
+        <div class="container card py-4 px-5 my-3" id="card">
+            <p class="text-center h1">All Songs</p>
+            <ul class="col">
+                {% for song in songs %}
+                <a href="/play/{{song.id}}" class="row">
+                    <li class="card my-2">
+                        <p class="card-text text-start">{{song.title}}</p>
+                    </li>
+                </a>
+                {% endfor %}
+            </ul>
+            <div class="app-controls py-4">
+                <a href="/list-all">
+                    <i class="fa fa-list"></i>
+                </a>
+                <i class="fa fa-circle"></i>
+                <a href="/add">
+                    <i class="fa fa-message"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <script src="{{url_for('static',filename='js/add_song.js')}}">
+    </script>
+{%endblock %}

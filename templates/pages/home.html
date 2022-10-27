@@ -1,0 +1,35 @@
+{% extends 'layout/layout.html' %}
+
+{%block content %}
+    <section>
+        <div class="container card py-4 px-5 my-3" id="card">
+            <div class="cover-art text-center card-image">
+                <img src="{{url_for('static',filename='img/man.jpg')}}" alt="" class="img-fluid">
+            </div>
+            <p class="mt-3 p" id="song-title">{{song_title}}</p>
+            <progress value="0" max="100" class="progress mt-2" id="duration"></progress>
+            <div class="controls container">
+                <i class="fa fa-backward" id="previous" data-previous="{{previous}}"></i>
+                <i class="fa fa-play" id="play"></i>
+                <i class="fa fa-forward" id="next" data-next="{{next}}"></i>
+            </div>
+            <div class="container music-controls">
+                <i class="fa fa-volume-low" id="volume-low"></i>
+                <progress class="px-3" min="0" value="0" max="100" id="volume-progress"></progress>
+                <i class="fa fa-volume-high" id="volume-high"></i>
+            </div>
+            <div class="app-controls py-4">
+                <a href="/list-all">
+                    <i class="fa fa-list"></i>
+                </a>
+                <i class="fa fa-circle"></i>
+                <a href="/add">
+                    <i class="fa fa-message"></i>
+                </a>
+            </div>
+        </div>
+        <audio src="/get-song/{{id}}"></audio>
+    </section>
+    <script src="{{url_for('static',filename='js/script.js')}}">
+    </script>   
+{%endblock %}
